@@ -1,0 +1,86 @@
+.contact img {
+  max-width: 100%;
+}
+
+.contact .form__message {
+  align-items: flex-start;
+}
+
+.contact .icon-success {
+  margin-top: 0.2rem;
+}
+
+.contact .field {
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  .contact .field {
+    margin-bottom: 2rem;
+  }
+}
+
+.contact__button {
+  margin-top: 3rem;
+}
+
+@media screen and (min-width: 750px) {
+  .contact__button {
+    margin-top: 4rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .contact__fields {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+  }
+}
+
+.contact .field.attachment:after {
+  box-shadow: none;
+}
+.contact .field.attachment label {
+  position: relative;
+  width: auto;
+  margin-right: 30px;
+}
+.contact .field.attachment .attachment-input:after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: var(--inputs-border-width);
+  right: var(--inputs-border-width);
+  bottom: var(--inputs-border-width);
+  left: var(--inputs-border-width);
+  border: 0.1rem solid transparent;
+  border-radius: var(--inputs-radius);
+  box-shadow: rgba(18, 18, 18, 0.55) 0px 0px 0px 1px;
+  transition: box-shadow var(--duration-short) ease;
+  z-index: 1;
+}
+.contact .field.attachment .attachment-input input {
+  padding-top: 10px;
+}
+.contact .field.checkbox label {
+  position: relative;
+  padding-bottom: 20px;
+  padding-right: 26px;
+  font-size: 12px;
+  color: #000;
+}
+.contact .field.checkbox input {
+  margin-left: 15px;
+}
+.contact .form__message {
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}
+.contact .icon-success {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 15px;
+}

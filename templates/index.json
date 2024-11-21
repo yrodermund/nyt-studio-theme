@@ -1,0 +1,165 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_Aebpxe": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_VKwUbJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Herzlich willkommen bei",
+            "heading_size": "h1"
+          }
+        },
+        "heading_Xhd7M3": {
+          "type": "heading",
+          "settings": {
+            "heading": "NYT",
+            "heading_size": "hxl"
+          }
+        },
+        "heading_7L7z3Q": {
+          "type": "heading",
+          "settings": {
+            "heading": "STUDIO",
+            "heading_size": "hxl"
+          }
+        },
+        "text_8NPpRr": {
+          "type": "text",
+          "settings": {
+            "text": "<p>innovativ – individuell – nachhaltig</p>"
+          }
+        },
+        "button_KyKwd3": {
+          "type": "button",
+          "settings": {
+            "button_label": "Mehr über uns",
+            "button_link": "shopify://pages/uber-uns",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_VKwUbJ",
+        "heading_Xhd7M3",
+        "heading_7L7z3Q",
+        "text_8NPpRr",
+        "button_KyKwd3"
+      ],
+      "custom_css": [
+        "h2 {margin-bottom: 5px; margin-top: 5px; line-height: 1;}",
+        "h2:first-of-type {margin-bottom: 30px;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".collection {background-color: #f0f0f0 !important;}",
+        "h2 {text-align: center;}"
+      ],
+      "settings": {
+        "title": "<strong>UNSERE PRODUKTE</strong>",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "frontpage",
+        "products_to_show": 25,
+        "columns_desktop": 6,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 28,
+        "padding_bottom": 24
+      }
+    },
+    "multicolumn_iPrwcj": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_4bEKCU": {
+          "type": "column",
+          "settings": {
+            "title": "Personalisierbare Produkte",
+            "text": "<p>Ob Cases, Darts-Zubehör oder Deko: mach’ es mit unseren personalisierbaren Produkten einzigartig. Konfigurierbare Farben und individuelle  Schriftzüge – wir bieten Dir die Möglichkeit, Deine Persönlichkeit und Deinen Stil zum Ausdruck zu bringen. Perfekt als Geschenk oder um sich selbst eine Freude zu bereiten.</p>",
+            "link_label": "Entdecke unsere Produkte",
+            "link": "shopify://collections/all"
+          }
+        },
+        "column_8VMQwm": {
+          "type": "column",
+          "settings": {
+            "title": "Beeindruckende Qualität",
+            "text": "<p>Unsere Produkte stehen für herausragende Qualität und Langlebigkeit. Bei der Auswahl unserer Materialien und der Fertigung legen wir höchsten Wert auf Präzision und Exzellenz. Diesen Anspruch stellen wir auch an unseren Kundenservice - schnelle Reaktionszeiten und freundlicher Service sind bei uns selbstverständlich und Deine Zufriedenheit ist unser oberstes Ziel.</p>",
+            "link_label": "Unsere Testimonials",
+            "link": "shopify://pages/testimonials"
+          }
+        },
+        "column_PVzgN3": {
+          "type": "column",
+          "settings": {
+            "title": "Nachhaltigkeit",
+            "text": "<p>Unsere Produkte sind hauptsächlich aus biologisch abbaubarem Biokunststoff hergestellt und werden fair in Deutschland produziert. Wir freuen uns darauf Dir ein außergewöhnliches Produkt zu liefern, das nicht nur funktional und qualitativ hochwertig ist, sondern auch einen Beitrag zur Nachhaltigkeit leistet.</p>",
+            "link_label": "Erfahre mehr über die Herstellung",
+            "link": "shopify://pages/uber-uns"
+          }
+        }
+      },
+      "block_order": [
+        "column_4bEKCU",
+        "column_8VMQwm",
+        "column_PVzgN3"
+      ],
+      "settings": {
+        "title": "Was uns einzigartig macht:",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "rich_text_Aebpxe",
+    "featured_collection",
+    "multicolumn_iPrwcj"
+  ]
+}

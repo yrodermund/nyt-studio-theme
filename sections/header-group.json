@@ -1,0 +1,92 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement-bar-0": {
+          "type": "announcement",
+          "settings": {
+            "text": "WILLKOMMEN BEI NYT STUDIO",
+            "link": ""
+          }
+        },
+        "announcement_zhzphF": {
+          "type": "announcement",
+          "settings": {
+            "text": "KOSTENLOSER VERSAND IN DEUTSCHLAND AB 40€",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement-bar-0",
+        "announcement_zhzphF"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "show_line_separator": true,
+        "show_social": true,
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
+    "1728206680add60149": {
+      "type": "apps",
+      "blocks": {
+        "progressify_multi_bar_upsells_block_pQBqr3": {
+          "type": "shopify://apps/progressify-multi-bar-upsells/blocks/block/82c18c6a-85d2-42a6-aa30-f91433549659",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "progressify_multi_bar_upsells_block_pQBqr3"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "header": {
+      "type": "header",
+      "custom_css": [
+        "sticky-header {background: #f0f0f0;}",
+        "nav ul li a span {text-transform: uppercase; font-size: 16px; padding: 0 10px; font-weight: 500;}",
+        "nav ul li summary span {text-transform: uppercase; font-size: 16px; padding: 0 10px; font-weight: 500;}",
+        "nav ul li ul li a {font-size: 16px;}"
+      ],
+      "settings": {
+        "logo_position": "middle-left",
+        "menu": "main-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "reduce-logo-size",
+        "show_line_separator": true,
+        "color_scheme": "scheme-1",
+        "menu_color_scheme": "scheme-2",
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "enable_customer_avatar": true,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "1728206680add60149",
+    "header"
+  ]
+}

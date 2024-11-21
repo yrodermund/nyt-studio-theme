@@ -1,0 +1,151 @@
+{% comment %}
+  Renders product variant-picker
+
+  Accepts:
+  - product: {Object} product object.
+  - block: {Object} passing the block information.
+  - product_form_id: {String} Id of the product form to which the variant picker is associated.
+  Usage:
+  {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+{% endcomment %}
+{%- unless product.has_only_default_variant -%}
+  <variant-selects
+    id="variant-selects-{{ section.id }}"
+    data-section="{{ section.id }}"
+    {{ block.shopify_attributes }}
+  >
+    {%- for option in product.options_with_values -%}
+      {%- liquid
+        assign swatch_count = option.values | map: 'swatch' | compact | size
+        assign picker_type = block.settings.picker_type
+
+        if swatch_count > 0 and block.settings.swatch_shape != 'none'
+          if block.settings.picker_type == 'dropdown'
+            assign picker_type = 'swatch_dropdown'
+          else
+            assign picker_type = 'swatch'
+          endif
+        endif
+      -%}
+      {%- if picker_type == 'swatch' -%}
+        <fieldset class="js product-form__input product-form__input--swatch">
+          <legend class="form__label">
+            {{ option.name }}
+            <span data-selected-value>
+              {{- option.selected_value -}}
+            </span>
+          </legend>
+          {% render 'product-variant-options',
+            product: product,
+            option: option,
+            block: block,
+            picker_type: picker_type
+          %}
+        </fieldset>
+      {%- elsif picker_type == 'button' -%}
+        <fieldset class="js product-form__input product-form__input--pill">
+          <legend class="form__label">
+            {{ option.name -}}
+            {%- if option.selected_value != null %}:{% endif %}
+            <span data-selected-value>{{ option.selected_value }}</span>
+          </legend>
+          {% render 'product-variant-options',
+            product: product,
+            option: option,
+            block: block,
+            picker_type: picker_type
+          %}
+        </fieldset>
+      {%- else -%}
+        <div class="product-form__input product-form__input--dropdown">
+          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+            {{ option.name }}
+          </label>
+          <div class="select">
+            {%- if picker_type == 'swatch_dropdown' -%}
+              <span
+                data-selected-value
+                class="dropdown-swatch"
+              >
+                {% render 'swatch', swatch: option.selected_value.swatch, shape: block.settings.swatch_shape %}
+              </span>
+            {%- endif -%}
+            <select
+              id="Option-{{ section.id }}-{{ forloop.index0 }}"
+              class="select__select"
+              name="options[{{ option.name | escape }}]"
+              form="{{ product_form_id }}"
+            >
+              {% render 'product-variant-options',
+                product: product,
+                option: option,
+                block: block,
+                picker_type: picker_type
+              %}
+            </select>
+            {% render 'icon-caret' %}
+          </div>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+
+    <script type="application/json" data-selected-variant>
+      {{ product.selected_or_first_available_variant | json }}
+    </script>
+  </variant-selects>
+{%- endunless -%}
+
+{% if product.metafields.custom.personalization_text != null %}
+  {% assign min_chars = product.metafields.custom.personalization_min_characters %}
+  {% assign max_chars = product.metafields.custom.personalization_max_characters %}
+
+  <div class="product-form__input">
+    <legend for="personalization" class="form__label"><span>{{ 'products.product.personalisation' | t }}</span></legend>
+    <input
+      type="text"
+      id="personalization"
+      name="properties[{{ 'products.product.personalisation' | t }}]"
+      class="personalization-input"
+      minlength="{{ min_chars | default: 0 }}"
+      maxlength="{{ max_chars | default: 99 }}"
+      form="{{ product_form_id }}"
+    >
+    <div class="personalization-hint">{{ product.metafields.custom.personalization_text }}</div>
+  </div>
+{% endif %}
+{% if product.metafields.custom.personalization_text_multiline != null %}
+  {% assign min_chars = product.metafields.custom.personalization_min_characters %}
+  {% assign max_chars = product.metafields.custom.personalization_max_characters %}
+
+  <div class="product-form__input">
+    <legend for="personalization_1" class="form__label"><span>{{ 'products.product.personalisation' | t }}</span></legend>
+    <input
+      type="text"
+      id="personalization_1"
+      name="properties[{{ 'products.product.personalisation' | t }} 1]"
+      class="personalization-input"
+      minlength="{{ min_chars | default: 0 }}"
+      maxlength="{{ max_chars | default: 99 }}"
+      form="{{ product_form_id }}"
+    >
+    <input
+      type="text"
+      id="personalization_2"
+      name="properties[{{ 'products.product.personalisation' | t }} 2]"
+      class="personalization-input"
+      minlength="{{ min_chars | default: 0 }}"
+      maxlength="{{ max_chars | default: 99 }}"
+      form="{{ product_form_id }}"
+    >
+    <input
+      type="text"
+      id="personalization_3"
+      name="properties[{{ 'products.product.personalisation' | t }} 3]"
+      class="personalization-input"
+      minlength="{{ min_chars | default: 0 }}"
+      maxlength="{{ max_chars | default: 99 }}"
+      form="{{ product_form_id }}"
+    >
+    <div class="personalization-hint">{{ product.metafields.custom.personalization_text_multiline }}</div>
+  </div>
+{% endif %}

@@ -1,0 +1,102 @@
+{% comment %}
+  Renders social icons.
+  Accepts:
+  - class: {String} a class to be added to the <ul> element (optional).
+
+  Usage:
+  {% render 'social-icons',
+    class: 'my-class'
+  %}
+{% endcomment %}
+
+<ul class="list-unstyled list-social{% if class %} {{ class}}{% endif %}" role="list">
+  <li class="list-social__item">
+    <a href="mailto:info@nyt-studio.com" class="link list-social__link" target="_blank">
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="icon icon-plus"
+        width="20"
+        height="22"
+        viewBox="0 0 20 22"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.75 5.25L3 6V18L3.75 18.75H20.25L21 18V6L20.25 5.25H3.75ZM4.5 7.6955V17.25H19.5V7.69525L11.9999 14.5136L4.5 7.6955ZM18.3099 6.75H5.68986L11.9999 12.4864L18.3099 6.75Z" fill="#080341"/>
+      </svg>
+      <span class="visually-hidden">info@nyt-studio.com</span>
+    </a>
+  </li>
+  {%- if settings.social_facebook_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_facebook_link }}" class="link list-social__link" target="_blank">
+        {%- render 'icon-facebook' -%}
+        <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_instagram_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_instagram_link }}" class="link list-social__link" target="_blank">
+        {%- render 'icon-instagram' -%}
+        <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_youtube_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_youtube_link }}" class="link list-social__link" target="_blank">
+        {%- render 'icon-youtube' -%}
+        <span class="visually-hidden">{{ 'general.social.links.youtube' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_tiktok_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_tiktok_link }}" class="link list-social__link" target="_blank">
+        {%- render 'icon-tiktok' -%}
+        <span class="visually-hidden">{{ 'general.social.links.tiktok' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_twitter_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_twitter_link }}" class="link list-social__link" target="_blank">
+        {%- render 'icon-twitter' -%}
+        <span class="visually-hidden">{{ 'general.social.links.twitter' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_pinterest_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_pinterest_link }}" class="link list-social__link" target="_blank">
+        {%- render 'icon-pinterest' -%}
+        <span class="visually-hidden">{{ 'general.social.links.pinterest' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_snapchat_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_snapchat_link }}" class="link list-social__link" target="_blank">
+        {%- render 'icon-snapchat' -%}
+        <span class="visually-hidden">{{ 'general.social.links.snapchat' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_tumblr_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_tumblr_link }}" class="link list-social__link" target="_blank">
+        {%- render 'icon-tumblr' -%}
+        <span class="visually-hidden">{{ 'general.social.links.tumblr' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_vimeo_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_vimeo_link }}" class="link list-social__link" target="_blank">
+        {%- render 'icon-vimeo' -%}
+        <span class="visually-hidden">{{ 'general.social.links.vimeo' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+</ul>
